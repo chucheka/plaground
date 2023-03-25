@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.spuntik</groupId>
+    <artifactId>playground</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>playground</name>
+    <description>A demo project to try out everything i learn on spring boot</description>
+    <properties>
+        <java.version>17</java.version>
+        <sonar-scanner-maven-plugin-version>3.9.0.2155</sonar-scanner-maven-plugin-version>
+        <sonarqube-host-url>http://localhost:9000</sonarqube-host-url>
+        <sonarqube-auth-token>sqp_91492d945f9f543a0127f100e15fecf23b25fc37</sonarqube-auth-token>
+        <sonarqube-login>admin</sonarqube-login>
+        <sonarqube-password>Kxke22@me</sonarqube-password>
+        <sonarqube-project-key>playground</sonarqube-project-key>
+        <sonarqube-project-name>playground</sonarqube-project-name>
+        <sonarqube-project-version>1.0</sonarqube-project-version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>{sonar-scanner-maven-plugin-version}</version>
+                <configuration>
+                    <sonar.host.url>{sonarqube-host-url}</sonar.host.url>
+<!--                    <sonar.login>{sonarqube-auth-token}</sonar.login>-->
+                    <sonar.login>{sonarqube-login}</sonar.login>
+                    <sonar.password>{sonarqube-password}</sonar.password>
+                    <sonar.projectKey>{sonarqube-project-key}</sonar.projectKey>
+                    <sonar.projectName>{sonarqube-project-name}</sonar.projectName>
+                    <sonar.projectVersion>{sonarqube-project-version}</sonar.projectVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>sonarsource-releases</id>
+            <name>SonarSource Releases</name>
+            <url>https://sonarsource.bintray.com/releases</url>
+        </repository>
+    </repositories>
+</project>

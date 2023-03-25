@@ -1,0 +1,6 @@
+projectKey=playground
+serverUrl=http://localhost:9000
+serverVersion=9.9.0.65466
+dashboardUrl=http://localhost:9000/dashboard?id=playground
+ceTaskId=AYcaPAJyDZzuCfiLl8v8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYcaPAJyDZzuCfiLl8v8
